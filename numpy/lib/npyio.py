@@ -288,7 +288,7 @@ def load(file, mmap_mode=None):
     Parameters
     ----------
     file : file-like object or string
-        The file to read.  It must support ``seek()`` and ``read()`` methods.
+        The file to read.  It must support ``seek()``, ``read()`` or readline()  methods.
         If the filename extension is ``.gz``, the file is first decompressed.
     mmap_mode : {None, 'r+', 'r', 'w+', 'c'}, optional
         If not None, then memory-map the file, using the given mode
@@ -918,7 +918,9 @@ def savetxt(fname, X, fmt='%.18e', delimiter=' ', newline='\n', header='',
     See Also
     --------
     save : Save an array to a binary file in NumPy ``.npy`` format
-    savez : Save several arrays into a ``.npz`` compressed archive
+    savez : Save several arrays into a ``.npz`` uncompressed archive
+    savez_compressed : Save several arrays into a ``.npz`` compressed archive
+
 
     Notes
     -----
